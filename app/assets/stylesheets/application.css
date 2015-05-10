@@ -13,3 +13,167 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+    padding: 0;
+    margin: 0;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #555;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    font-family: Arial;
+    height: 100%;
+    font-size: 100%;
+}
+
+.center {
+    text-align: center;
+}
+
+.right {
+    float: right;
+}
+
+.round {
+    border-radius: 100%;
+}
+
+.container {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.panel {
+    margin: 20px 10px;
+}
+
+.head {
+    background: #ddd;
+    padding: 20px;
+    margin: 20px;
+}
+
+.col-1 {
+    width: 10%;
+}
+
+.col-2 {
+    width: 20%;
+}
+
+.col-8 {
+    width: 80%;
+}
+
+.col-9 {
+    width: 90%;
+}
+
+.col-10 {
+    width: 100%;
+}
+
+.head h2 {
+    color: #666;
+}
+
+.lst {
+    padding: 0px 20px 20px 20px;
+}
+
+.lst li {
+    cursor: pointer;
+    background: #eee;
+    padding: 10px;
+    margin: 15px 0;
+    -webkit-transition: all ease 0.3s;
+    -moz-transition: all ease 0.3s;
+    -o-transition: all ease 0.3s;
+    transition: all ease 0.3s;
+}
+
+.lst li:hover,
+.lst li:active {
+    background: #ccc;
+}
+
+.btn {
+    border: none;
+    letter-spacing: 1px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 700;
+    padding: 10px;
+    background: #eee;
+    text-align: center;
+    outline: none;
+}
+
+.fun button {
+    top: 10px;
+    left: 10px;
+    width: 50px;
+}
+
+input.middle {
+    height: 40px;
+    font-size: 1.1em;
+}
+
+.input {
+    padding: 5px;
+    border: 1px solid #eee;
+}
+
+#express #search {
+    position: absolute;
+    top: 1px;
+    right: 0;
+}
+
+#order_container {
+    clear: both;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.loading {
+    text-align: center;
+    display: none;
+}
+
+.loading img {
+    width: 100px;
+    height: 100px;
+}
+
+.msg {
+    text-align: center;
+}
+
+#order_list {
+    border-spacing: 0;
+    width: 100%;
+}
+
+#order_list td {
+    border-bottom: 1px solid #666;
+}
+
+#order_list .time {
+    font-size: 0.9em;
+    padding: 5px 0;
+    color: #666;
+}
