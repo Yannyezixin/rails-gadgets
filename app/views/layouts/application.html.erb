@@ -1,14 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-cn">
 <head>
-  <title>Gadgets</title>
+  <title>Fun</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
+<div class="container">
 <%= yield %>
+</div>
 
 </body>
 </html>

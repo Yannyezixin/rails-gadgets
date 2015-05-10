@@ -1,0 +1,21 @@
+<div class="fun">
+    <a href="/"><button class="btn btn-1">FUN</button></a>
+</div>
+<div class="panel">
+    <div>
+        <form id="express" action="<%= express_search_url %>" method="post">
+            <input id="order_id" class="input middle col-10" type="text" name="order_id" placeholder="快递订单号" required />
+            <button type="submit" class="btn btn-1" id="search">查找</button>
+        </form>
+        <div id="order_container">
+            <p class="msg" data-empty="暂无快递单号记录!"></p>
+            <div class="loading">
+                <img src="<%= image_url "loading.gif" %>">
+            </div>
+            <table id="order_list">
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
