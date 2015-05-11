@@ -89,6 +89,14 @@ body {
     color: #666;
 }
 
+.error {
+    color: rgb(240, 65, 65);
+}
+
+.error-input {
+    border-color: rgb(240, 65, 65) !important;
+}
+
 .lst {
     padding: 0px 20px 20px 20px;
 }
@@ -176,4 +184,20 @@ input.middle {
     font-size: 0.9em;
     padding: 5px 0;
     color: #666;
+}
+
+#cet #search {
+    float: right;
+    margin: 5px 0;
+    z-index: 4;
+}
+
+#cet_container {
+    clear: both;
+}
+
+.cetTable {
+    clear: both;
+    width: 100%;
+    border: 1px solid #eee;
 }

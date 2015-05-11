@@ -1,0 +1,19 @@
+<div class="fun">
+    <a href="/"><button class="btn btn-1">FUN</button></a>
+</div>
+<div class="panel">
+    <div>
+        <form id="cet" action="<%= cet_search_url %>" method="post">
+            <input id="zkzh" class="input middle col-10" type="text" name="zkzh" placeholder="准考证号, 15位" data-length="15" required />
+            <input id="xm" class="input middle col-10" type="text" name="zkzh" placeholder="姓名" required />
+            <button type="submit" class="btn btn-1" id="search">查找</button>
+        </form>
+        <div id="cet_container">
+            <div class="loading">
+                <img src="<%= image_url "loading.gif" %>">
+            </div>
+            <div id="cet_table">
+            </div>
+        </div>
+    </div>
+</div>

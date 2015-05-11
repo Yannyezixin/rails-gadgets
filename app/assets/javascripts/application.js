@@ -17,7 +17,9 @@
 
 
 ready = function () {
-    $('#express').on('submit', function (event) {
+
+    // 快递单号表单
+    $('#express').submit(function (event) {
         $msg = $('.msg');
         $msg.text("");
         $('.loading').show();
@@ -46,6 +48,30 @@ ready = function () {
                 } else {
                     $msg.text(data.message);
                 }
+            }
+        );
+    });
+
+    // 四六级查询
+    $('#cet').submit(function (event) {
+        event.preventDefault();
+        zkzh = $('#zkzh');
+        xm = $('#xm');
+
+        if (zkzh.val().replace(/\s+/g,"").length != zkzh.data('length')) {
+            zkzh.addClass('error-input');
+            return;
+        } else {
+            zkzh.removeClass('error-input');
+        }
+
+        $('.loading').show();
+        $cetTable = $('#cet_table');
+        $cetTable.html("");
+        $.post($(this).attr('action'), {"authenticity_token": $('meta[name="csrf-token"]').attr('content'), "zkzh": zkzh.val(), "xm": xm.val()},
+            function (data) {
+                $('.loading').hide();
+                $cetTable.html(data);
             }
         );
     });
