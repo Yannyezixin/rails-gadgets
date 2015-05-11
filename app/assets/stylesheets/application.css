@@ -97,6 +97,10 @@ body {
     border-color: rgb(240, 65, 65) !important;
 }
 
+.red {
+    color: rgb(240, 65, 65);
+}
+
 .lst {
     padding: 0px 20px 20px 20px;
 }
