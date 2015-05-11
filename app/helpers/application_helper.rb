@@ -32,8 +32,13 @@ module ApplicationHelper
   end 
 
   def self.get_cet_result(html)
-    result = /m_cnt_m">([\s|\S]*?)<div class="psTxt/.match(html)
-    Rails.logger.debug(result)
-    return result[1]
+    error = /error[\s|\S]*?>(.*?)<\/div>/.match(html)
+    if error
+      return error[1]
+    else
+      result = /m_cnt_m">([\s|\S]*?)<div class="psTxt/.match(html)
+      Rails.logger.debug(result)
+      return result[1]
+    end
   end
 end
