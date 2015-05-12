@@ -3,12 +3,12 @@
 
 ### DOING:
 
--   [ ] 公交路线图
+-   [ ] jquery + ruby 实现ajax实时上传
 
 
 ### TODO:
 
--   [ ] 公交路线图
+-   [ ] jquery + ruby 实现ajax实时上传
 
 
 ### DONE:
