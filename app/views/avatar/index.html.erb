@@ -1,0 +1,18 @@
+<div class="fun">
+    <a href="/"><button class="btn btn-1">FUN</button></a>
+</div>
+<div class="upload">
+    <button class="btn btn-1" id="avatar-btn">UPLOAD</button>
+    <input id="avatar" type="file" name="avatar" data-form-action="<%= avatar_upload_url %>">
+</div>
+<div class="panel">
+    <div id="progress"></div>
+    <div class="center" id="progress-num"><span><span></div>
+     <div class="photo">
+         <% @avatar_src_arr.each do |avatar|%>
+         <div class="block">
+             <img src="<%= avatar %>">
+         </div>
+         <% end%>
+    </div>
+</div>

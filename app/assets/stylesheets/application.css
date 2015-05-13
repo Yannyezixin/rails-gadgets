@@ -39,7 +39,7 @@ body {
 }
 
 .center {
-    text-align: center;
+    text-align: center !important;
 }
 
 .right {
@@ -136,8 +136,30 @@ body {
 .fun button {
     top: 10px;
     left: 10px;
-    width: 50px;
 }
+
+#avatar_form {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.upload {
+    display: inline-block;
+    top: 10px;
+    right: 10px;
+    overflow: hidden;
+}
+
+.upload input[type="file"] {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: 0;
+    height: 100%;
+    cursor: pointer;
+}
+
 
 input.middle {
     height: 40px;
@@ -204,4 +226,27 @@ input.middle {
     clear: both;
     width: 100%;
     border: 1px solid #eee;
+}
+
+#progress {
+    height: 20px;
+    width: 0%;
+    background: #eee;
+}
+
+#progress-num {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    font-size: 0.8em;
+    line-height: 20px;
+}
+
+.photo .block {
+    max-width: 100%;
+}
+
+.photo .block img {
+    width: 100%;
+    border: 5px solid #eee;
 }

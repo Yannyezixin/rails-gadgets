@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.form.min
 //= require turbolinks
 //= require_tree .
 
@@ -77,6 +78,46 @@ ready = function () {
                 $cetTable.html(data);
             }
         );
+    });
+
+    (function () {
+        if ($('#avatar')) {
+            $this = $('#avatar');
+            $this.parent().wrap('<form id="avatar_form" action="'+$this.data('form-action')+
+                         '" method="post" enctype="multipart/form-data"></form>');
+        }
+    }());
+    $('#avatar').on('change', function () {
+        progressBtn = $('#progress');
+        progressBtn.width('0%');
+        progressNum = $('#progress-num span');
+        photo = $('.photo');
+        $('#avatar_form').ajaxSubmit({
+            dataType: 'json',
+            beforeSend: function () {
+            },
+            uploadProgress: function (event, position, total, percentComplete) {
+                var percentVal = percentComplete + '%';
+                progressBtn.width(percentVal);
+                progressNum.html(percentVal);
+            },
+            success: function (data) {
+                if (data.status == "error") {
+                    progressNum.html(data.message);
+                } else {
+                    setTimeout(function () {
+                        progressNum.html("");
+                        progressBtn.width("0%");
+                    }, 1000);
+                    console.log(data.url);
+                    img = $('<img>').attr('src', data.url);
+                    photo.prepend($('<div class="block"></div>').html(img));
+                }
+            },
+            error: function (data) {
+                progressNum.html("服务器出错");
+            },
+        });
     });
 };
 
