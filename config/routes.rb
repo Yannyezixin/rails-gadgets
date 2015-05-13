@@ -8,4 +8,8 @@ Rails.application.routes.draw do
   get 'cet/index', to: 'cet#index', as: 'cet'
 
   post 'cet/search', to: 'cet#search', as: 'cet_search'
+
+  get 'avatar', to: 'avatar#index', as: 'avatar'
+  
+  post 'avatar/upload', to: 'avatar#upload', as: 'avatar_upload'
 end

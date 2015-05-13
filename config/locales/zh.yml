@@ -1,0 +1,4 @@
+zh:
+    errors:
+        messages:
+            extension_white_list_error: "不可上传 %{extension} 文件，可上传文件的类型为: %{allowed_types}"
