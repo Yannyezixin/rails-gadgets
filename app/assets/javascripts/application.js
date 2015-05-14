@@ -137,7 +137,7 @@ ready = function () {
                         }
                         li = $('<li data-id='+data.data.id+' data-url-status="'+ data.data.status_url +'"></li>');
                         div = $('<div><span class="checkbox"><div class="checker"></div></span></div>');
-                        div.append($('<div class="todo_si"></div>').html(data.data.name));
+                        div.append($('<div class="todo_si"></div>').text(data.data.name));
                         div.append($('<div class="delete">X</div>'));
                         $('.todo').prepend(li.append(div));
                     }
