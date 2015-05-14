@@ -12,4 +12,10 @@ Rails.application.routes.draw do
   get 'avatar', to: 'avatar#index', as: 'avatar'
   
   post 'avatar/upload', to: 'avatar#upload', as: 'avatar_upload'
+
+  resources :todo do
+    member do
+      get 'status'
+    end
+  end
 end

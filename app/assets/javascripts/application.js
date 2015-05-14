@@ -80,6 +80,7 @@ ready = function () {
         );
     });
 
+    // 图片实时上传
     (function () {
         if ($('#avatar')) {
             $this = $('#avatar');
@@ -119,6 +120,66 @@ ready = function () {
             },
         });
     });
+
+    // TODO-List
+    $('#todo-form').submit(function (event) {
+        event.preventDefault();
+        todo = $('#todo-new');
+        todoLen = todo.val().replace(/\s+/g,"").length;
+        if (todoLen > 0) {
+            $.post($(this).attr('action'),
+                   {"authenticity_token": $('meta[name="csrf-token"]').attr('content'), "name": todo.val()},
+                    function (data) {
+                        todo.val("");
+                        if (data.status == "error") {
+                            console.log(data.message);
+                            return;
+                        }
+                        li = $('<li data-id='+data.data.id+' data-url-status="'+ data.data.status_url +'"></li>');
+                        div = $('<div><span class="checkbox"><div class="checker"></div></span></div>');
+                        div.append($('<div class="todo_si"></div>').html(data.data.name));
+                        div.append($('<div class="delete">X</div>'));
+                        $('.todo').prepend(li.append(div));
+                    }
+            );
+        }
+    });
+    // TODO-list finish check
+    $('.todo').on('click', '.checker', function () {
+        li = $(this).parents('li');
+        id = li.data('id');
+        $.get(li.data('url-status'), function (data) {
+            if (data.status == "success") {
+                li.animate({
+                    left:'100%',
+                    opacity: 0.25
+                }, 500, function () {
+                    li.remove();
+                });
+            }
+        });
+    });
+    // TODO-list delete
+    $('.todo').on('click', '.delete', function () {
+        li = $(this).parents('li');
+        id = li.data('id');
+        ajaxUrl = $('#todo-form').attr('action') + '/' + id;
+        $.ajax({
+            url: ajaxUrl,
+            type: 'DELETE',
+            success: function (data) {
+                if (data.status == "success") {
+                    li.animate({
+                        left:'100%',
+                        opacity: 0.25
+                    }, 500, function () {
+                        li.remove();
+                    });
+                }
+            }
+        });
+    });
+
 };
 
 $(document).ready(ready);

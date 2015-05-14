@@ -1,0 +1,23 @@
+<div class="fun">
+    <a href="/"><button class="btn btn-1">FUN</button></a>
+</div>
+<div class="panel">
+    <div>
+        <form id="todo-form" action="<%= todo_index_url %>" method="post">
+            <input id="todo-new" class="input middle col-10" type="text" name="name" placeholder="敲击回车添加任务" />
+        </form>
+        <div class="border-1 panel-c">
+            <ul class="todo">
+                <% @todos.each do |todo| %>
+                    <li data-id="<%= todo.id %>" data-url-status="<%= status_todo_url :id => todo.id %>">
+                        <div>
+                            <span class="checkbox"><div class="checker"></div></span>
+                            <div class="todo_si"><%= todo.name %></div>
+                            <div class="delete">X</div>
+                        </div>
+                    </li>
+                <% end %>
+            </ul>
+        </div>
+    </div>
+</div>

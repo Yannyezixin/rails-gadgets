@@ -46,6 +46,14 @@ body {
     float: right;
 }
 
+.border-1 {
+    border: 1px solid #eee;
+}
+
+.border-2 {
+    border: 2px solid #eee;
+}
+
 .round {
     border-radius: 100%;
 }
@@ -58,6 +66,12 @@ body {
 .panel {
     margin: 20px 10px;
 }
+
+.panel-c {
+    margin: 20px 0;
+    overflow: hidden;
+}
+
 
 .head {
     background: #ddd;
@@ -249,4 +263,49 @@ input.middle {
 .photo .block img {
     width: 100%;
     border: 5px solid #eee;
+}
+
+.todo li {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 5px;
+    border-bottom: 1px solid #eee;
+    color: #666;
+    font-size: 1.1em;
+}
+
+.todo li:last-child {
+    border-bottom: none;
+}
+
+.checkbox {
+    position: absolute;
+    top: 11px;
+    left: 10px;
+    height: 25px;
+    width: 25px;
+}
+
+.checker {
+    height: 16px;
+    width: 16px;
+    border: 1px solid #ddd;
+}
+
+.todo_si {
+    margin: 0 8px 0 35px;
+}
+
+.todo .delete {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 5px;
+    font-weight: 900;
+    color: rgb(229, 120, 120);
+    cursor: pointer;
+}
+
+.todo .delete:hover {
+    color: rgb(253, 0, 0);
 }
