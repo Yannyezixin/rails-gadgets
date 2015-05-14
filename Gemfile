@@ -28,6 +28,7 @@ gem 'mechanize'
 gem 'carrierwave'
 
 gem 'mini_magick'
+gem 'mysql2'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
