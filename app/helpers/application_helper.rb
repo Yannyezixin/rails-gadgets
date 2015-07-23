@@ -41,4 +41,13 @@ module ApplicationHelper
       return result[1]
     end
   end
+
+  def self.get_weather_html(cityCode)
+    url = "http://m.weather.com.cn/mweather/%s.shtml" % cityCode
+
+    html = open(url).read
+    weather = /"days7">([\s|\S]*?)<\/div>/.match(html)
+
+    return weather[1]
+  end
 end

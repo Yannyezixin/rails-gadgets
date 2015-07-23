@@ -185,7 +185,8 @@ input.middle {
     border: 1px solid #eee;
 }
 
-#express #search {
+.single-search #search 
+{
     position: absolute;
     top: 1px;
     right: 0;
@@ -309,3 +310,34 @@ input.middle {
 .todo .delete:hover {
     color: rgb(253, 0, 0);
 }
+
+#weather_container ul {
+    list-style: initial;
+}
+
+#weather_container ul > li{
+    clear: both;
+    padding: 5px;
+    border-bottom: 1px solid #eee;
+    line-height: 30px;
+}
+
+#weather_container ul > li b{
+    float: left;
+    width: 36%;
+}
+
+#weather_container ul > li i{
+    float: left;
+    width: 27%;
+    text-align: center;
+}
+
+#weather_container ul li img {
+    width: 30px;
+}
+
+#weather_container ul > li span{
+    float: right;
+}
+

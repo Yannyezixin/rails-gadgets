@@ -180,6 +180,24 @@ ready = function () {
         });
     });
 
+    // 天气查询
+    $('#weather_form').submit(function (e) {
+        e.preventDefault();
+        weatherCon = $('#weather_container');
+        weatherCon.html(null);
+        var cityCode = city[$('#weather_id').val()];
+        if (cityCode == undefined) {
+            weatherCon.html("请输入正确的城市名");
+        } else {
+            $('.loading').show();
+            $.post($(this).attr('action'), {'authenticity_token': $('meta[name="csrf-token"]').attr('content'), 'cityCode': cityCode}, function (data) {
+                $('.loading').hide();
+                weatherCon.html(data);
+                weatherCon.children().last().remove();
+            });
+        }
+    });
+
 };
 
 $(document).ready(ready);

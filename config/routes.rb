@@ -18,4 +18,7 @@ Rails.application.routes.draw do
       get 'status'
     end
   end
+
+  get 'weather', to: 'weather#index', as: 'weather'
+  post 'weather/search', to: 'weather#search', as: 'weather_search'
 end

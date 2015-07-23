@@ -1,0 +1,19 @@
+<div class="fun">
+    <a href="/"><button class="btn btn-1">FUN</button></a>
+</div>
+<div class="panel">
+    <div>
+        <form id="weather_form" class="single-search" action="<%= weather_search_url %>" method="post">
+            <input id="weather_id" class="input middle col-10" type="text" name="weather_id" placeholder="请输入城市" required />
+            <button type="submit" class="btn btn-1" id="search">查找</button>
+        </form>
+        <div id="order_container">
+            <div class="loading">
+                <img src="<%= image_url "loading.gif" %>">
+            </div>
+            <div id="weather_container">
+            </div>
+        </div>
+    </div>
+</div>
+
